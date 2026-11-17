@@ -1,0 +1,29 @@
+# NetProg
+
+Практическое задание 3 — клиенты сетевых служб на C.
+
+## Структура
+
+- `daytime/` — клиент UDP daytime (RFC 867, порт 13)
+- `echo/` — клиент TCP echo (RFC 862, порт 7)
+
+В каждом каталоге: `*.c`, `Makefile`, `.gitignore`.
+
+## Сборка
+
+    cd daytime && make
+    cd ../echo && make
+
+## daytime (UDP)
+
+    ./daytime_client <host> [port]
+    ./daytime_client 172.16.40.1
+
+Вывод: текущая дата и время.
+
+## echo (TCP)
+
+    ./echo_client <host> [port]
+    printf 'test\n' | ./echo_client 172.16.40.1
+
+Вывод: отправленные строки возвращаются сервером.
