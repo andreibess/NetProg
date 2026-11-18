@@ -1,6 +1,8 @@
 // daytime/daytime_client.c — клиент UDP daytime (RFC 867)
 // Отправляем пустую датаграмму на сервер, получаем строку с датой/временем.
 // Использование: ./daytime_client <host> [port] (порт по умолчанию 13)
+#define _POSIX_C_SOURCE 200112L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +10,7 @@
 #include <errno.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include <netdb.h>
 
 #define BUF_SIZE    1024
