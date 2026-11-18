@@ -1,6 +1,8 @@
 // echo/echo_client.c — клиент TCP echo (RFC 862)
 // Читаем строки из stdin, отправляем серверу, читаем ровно столько же обратно.
 // Использование: ./echo_client <host> [port] (порт по умолчанию 7)
+#define _POSIX_C_SOURCE 200112L
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +10,7 @@
 #include <errno.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include <netdb.h>
 
 #define BUF_SIZE 4096
